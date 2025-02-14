@@ -1,0 +1,44 @@
+version: "3.1"
+
+stories:
+   - story: happy path
+     steps:
+        - intent: greet
+        - action: utter_greet
+        - intent: mood_great
+        - action: utter_happy
+
+   - story: sad path 1
+     steps:
+        - intent: greet
+        - action: utter_greet
+        - intent: mood_unhappy
+        - action: utter_cheer_up
+        - action: utter_did_that_help
+        - intent: affirm
+        - action: utter_happy
+
+   - story: sad path 2
+     steps:
+        - intent: greet
+        - action: utter_greet
+        - intent: mood_unhappy
+        - action: utter_cheer_up
+        - action: utter_did_that_help
+        - intent: deny
+        - action: utter_goodbye
+
+   - story: turn on the light
+     steps:
+        - intent: turn_on_light
+        - action: utter_turn_on_light
+
+   - story: turn off the light
+     steps:
+        - intent: turn_off_light
+        - action: utter_turn_off_light
+   - story: check the weather
+     steps:
+        - intent: check_weather
+        - action: utter_check_weather
+
